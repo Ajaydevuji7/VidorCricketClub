@@ -11,7 +11,7 @@ import Gallery from './components/Gallery';
 
 function App() {
   return (
-    <Router>
+    <Router basename='/VidorCricketClub'>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} /> 
