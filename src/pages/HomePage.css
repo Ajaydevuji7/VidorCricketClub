@@ -1,0 +1,105 @@
+.home {
+    background-color: black;
+    color: gold;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+  }
+  
+  .hero-background {
+    background: url('/Users/ajaydevuji/Desktop/vidor-cricket-club/src/assets/logo.jpg') center/cover no-repeat; 
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: goldenrod;
+  }
+  
+  .hero-title {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .hero-buttons .button {
+    background-color: gold;
+    color: black;
+    border: none;
+    padding: 0.8rem 2rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .hero-buttons .button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .highlight {
+    background-color: #202020; /* Slightly lighter black for contrast */
+    color: gold;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px; /* Rounded edges */
+    margin: 2rem auto;
+    max-width: 900px;
+  }
+  
+  .leagues {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+  }
+  
+  .league-card {
+    background-color: #202020;
+    border: 1px solid gold;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .league-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 223, 0, 0.6);
+  }
+  
+  .league-logo {
+    max-width: 100px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+  }
+  
+  .league-name {
+    font-size: 1.2rem;
+    color: gold;
+  }

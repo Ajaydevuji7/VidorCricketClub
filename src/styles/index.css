@@ -1,0 +1,21 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding/border in element width/height */
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: black; /* Match your website theme */
+  }
+  
+  /* Prevent unintended layout shifts */
+  body {
+    display: flex;
+    flex-direction: column;
+  }

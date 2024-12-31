@@ -1,0 +1,83 @@
+.achievements-page {
+  padding: 5rem;
+  background-color: black;
+  color: gold;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #f1c40f;
+}
+
+.leagues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+}
+
+.league-card {
+  background-color: #202020;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 2px solid gold;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.league-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 223, 0, 0.6);
+}
+
+.achievements-list {
+  margin-top: 1rem;
+}
+
+.achievement-card {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-card h4 {
+  font-size: 1.2rem;
+  color: #f1c40f;
+  margin: 0.5rem 0;
+}
+
+.achievement-card p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: white;
+}
+
+.achievement-card .result {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: gold;
+}
+
+.contact {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+.contact a {
+  color: #f1c40f;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}

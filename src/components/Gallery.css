@@ -1,0 +1,72 @@
+/* Main Gallery Container */
+.gallery {
+    text-align: center;
+    padding: 5rem 2rem 2rem;
+    background-color: black;
+    color: gold;
+  }
+  
+  /* Title and Description */
+  .gallery h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .gallery p {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #f1c40f;
+  }
+  
+  /* Gallery Sections */
+  .gallery-section {
+    margin-bottom: 3rem;
+  }
+  
+  .gallery-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .league-gallery h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive Grid for Photos */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  /* Photo Styling */
+  .gallery-photo {
+    width: 100%;
+    height: auto;
+    border: 2px solid gold;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  /* Hover Effect for Photos */
+  .gallery-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(255, 223, 0, 0.6);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .gallery {
+      padding: 1rem;
+    }
+  
+    .gallery-section h2 {
+      font-size: 1.8rem;
+    }
+  
+    .league-gallery h3 {
+      font-size: 1.2rem;
+    }
+  }

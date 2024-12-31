@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "name": "CTCL",
+      "description": "Central Texas Cricket League",
+      "captain": "Bharath",
+      "viceCaptain": "Rajath"
+    },
+    {
+      "id": 2,
+      "name": "APCL",
+      "description": "Austin Premier Cricket League",
+      "captain": "Manikanta",
+      "viceCaptain": "Ajay"
+    },
+    {
+      "id": 3,
+      "name": "LPCL",
+      "description": "LoneStar Premier Cricket League",
+      "captain": "Sriram Devata",
+      "viceCaptain": "Bharath"
+    }
+  ]
