@@ -1,0 +1,184 @@
+@import './Animations.css';
+
+/* Main Container */
+.vcc-home-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+/* Intro Section */
+.vcc-intro-section {
+    flex: 1;
+    background: url('/src/assets/logo.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: goldenrod;
+    padding: 2rem;
+    animation: fadeInFromTop 1s ease-in-out;
+}
+
+.vcc-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    animation: fadeInFromTop 1.2s ease-in-out;
+}
+
+.vcc-description {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    animation: fadeInFromTop 1.5s ease-in-out;
+}
+
+.vcc-action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    animation: fadeInFromBottom 2s ease-in-out;
+}
+
+.vcc-button {
+    background-color: gold;
+    color: black;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.vcc-button:hover {
+    background-color: #d4af37;
+    transform: scale(1.05);
+}
+
+/* Leagues Section */
+.vcc-leagues-section {
+    flex: 1;
+    background: url('/src/assets/our-leagues.jpg') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: gold;
+    padding: 2rem;
+    animation: fadeInFromBottom 1s ease-in-out;
+}
+
+.vcc-leagues-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    animation: fadeInFromTop 1.2s ease-in-out;
+}
+
+.vcc-leagues-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ffd700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    animation: fadeInFromBottom 1.5s ease-in-out;
+}
+
+.vcc-leagues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    animation: fadeInFromBottom 2s ease-in-out;
+}
+
+.vcc-league-card {
+    background-color: rgba(32, 32, 32, 0.9);
+    border: 1px solid gold;
+    border-radius: 8px;
+    text-decoration: none;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vcc-league-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(255, 223, 0, 0.6);
+}
+
+.vcc-league-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.vcc-league-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: gold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+    .vcc-home-container {
+        flex-direction: column;
+    }
+
+    .vcc-intro-section,
+    .vcc-leagues-section {
+        flex: 1 0 auto;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .vcc-title, .vcc-leagues-title {
+        font-size: 2rem;
+    }
+
+    .vcc-description, .vcc-leagues-description {
+        font-size: 1rem;
+    }
+
+    .vcc-action-buttons .vcc-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .vcc-intro-section, .vcc-leagues-section {
+        padding: 1rem;
+    }
+
+    .vcc-title, .vcc-leagues-title {
+        font-size: 1.8rem;
+    }
+
+    .vcc-description, .vcc-leagues-description {
+        font-size: 0.9rem;
+    }
+
+    .vcc-action-buttons .vcc-button {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+
+    .vcc-leagues-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}

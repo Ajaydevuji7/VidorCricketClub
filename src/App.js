@@ -8,6 +8,8 @@ import Achievements from './pages/Achievements';
 import TeamDetails from './pages/TeamDetails';
 import LeagueDetails from './pages/LeagueDetails';
 import Gallery from './components/Gallery';
+import AboutUs from './pages/AboutUs';
+import Sponsors from './pages/Sponsers';
 
 function App() {
   return (
@@ -15,12 +17,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} /> 
-        <Route path="/about" element={<Achievements />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/achievements" element={<Achievements />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/teams/:id" element={<TeamDetails />} />
-        <Route path="/leagues/:id" element={<LeagueDetails />} />
+        <Route path="/teams/:teamId" element={<TeamDetails />} />
+        <Route path="/teams/:teamId/leagues/:leagueId" element={<LeagueDetails />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/sponsers" element={<Sponsors />} />
       </Routes>
     </Router>
   );

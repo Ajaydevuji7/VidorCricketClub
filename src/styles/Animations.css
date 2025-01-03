@@ -1,0 +1,94 @@
+/* animations.css */
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Fade In from Top */
+  @keyframes fadeInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade In from Bottom */
+  @keyframes fadeInFromBottom {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Slide In from Left */
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slide In from Right */
+  @keyframes slideInFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Zoom In */
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Bounce */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Pulse Glow */
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 223, 0, 1);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(255, 223, 0, 0.5);
+    }
+  }

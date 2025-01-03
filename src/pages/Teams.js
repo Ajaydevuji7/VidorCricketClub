@@ -1,15 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Teams.css';
-import teamLogo from '../assets/mob-vcc-logo.jpg';
+import '../styles/Teams.css';
+import mobLogo from '../assets/mob-vcc-logo.jpg';
+import spartansLogo from '../assets/spartans-vcc.jpg';
 
 function Teams() {
   const teams = [
     {
       id: 1,
       name: 'The MOB - VCC',
-      logo: teamLogo,
+      logo: mobLogo,
       description: 'Our flagship team participating in multiple leagues.',
+    },
+    {
+      id: 2,
+      name: 'Spartans - VCC',
+      logo: spartansLogo,
+      description: 'Our second flagship team participating in multiple leagues.',
     },
   ];
 
@@ -23,7 +30,7 @@ function Teams() {
           <div
             key={team.id}
             className="team-card"
-            onClick={() => navigate(`/teams/${team.id}`)}
+            onClick={() => navigate(`/teams/${team.id}`, { state: { team } })}
           >
             <img src={team.logo} alt={team.name} className="team-logo" />
             <h3>{team.name}</h3>

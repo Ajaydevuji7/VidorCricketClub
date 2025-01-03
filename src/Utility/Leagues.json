@@ -1,23 +1,23 @@
 [
     {
       "id": 1,
-      "name": "CTCL",
-      "description": "Central Texas Cricket League",
-      "captain": "Bharath",
-      "viceCaptain": "Rajath"
+      "name": "APCL",
+      "description": "Austin Premier Cricket League",
+      "logo": "../assets/apcl-logo.jpg",
+      "teams": [1]
     },
     {
       "id": 2,
-      "name": "APCL",
-      "description": "Austin Premier Cricket League",
-      "captain": "Manikanta",
-      "viceCaptain": "Ajay"
+      "name": "CTCL",
+      "description": "Central Texas Cricket League",
+      "logo": "../assets/ctcl-logo.jpg",
+      "teams": [1, 2]
     },
     {
       "id": 3,
       "name": "LPCL",
-      "description": "LoneStar Premier Cricket League",
-      "captain": "Sriram Devata",
-      "viceCaptain": "Bharath"
+      "description": "Lonestar Premier Cricket League",
+      "logo": "../assets/lpcl-logo.jpg",
+      "teams": [1]
     }
   ]

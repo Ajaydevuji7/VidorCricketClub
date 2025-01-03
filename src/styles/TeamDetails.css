@@ -1,0 +1,89 @@
+.team-details {
+  padding: 6rem 4rem 4rem;;
+  background: linear-gradient(135deg, black, #202020);
+  color: gold;
+  text-align: center;
+}
+
+.team-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid gold;
+}
+.league-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.league-card {
+  text-align: center;
+  background: #202020;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 2px solid gold;
+  box-shadow: 0 4px 15px rgba(255, 223, 0, 0.6);
+}
+
+.league-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid gold;
+  margin-bottom: 1rem;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.player-card {
+  background: #202020;
+  border: 2px solid gold;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.team-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.team-info h2 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0.5rem 0;
+}
+
+.team-info p {
+  font-size: 1.2rem;
+  color: #ffd700;
+}
+
+.players-title {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.player-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255, 223, 0, 0.6);
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 1rem;
+}

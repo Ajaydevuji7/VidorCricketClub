@@ -1,0 +1,56 @@
+.sponsors-page {
+  padding: 100px 2rem 2rem; /* Add top padding to account for the navbar */
+  text-align: center;
+  background-color: black;
+  color: gold;
+}
+
+.sponsors-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+.sponsors-page p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.sponsor-card {
+  background-color: rgba(32, 32, 32, 0.9);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 223, 0, 0.6);
+}
+
+.sponsor-logo {
+  width: 140px;
+  height: 140px;
+  object-fit: fill;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  border: 5px solid gold;
+}
+
+.sponsor-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.sponsor-card p {
+  font-size: 1rem;
+  margin: 0;
+}
