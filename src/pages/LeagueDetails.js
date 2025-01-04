@@ -16,7 +16,7 @@ function LeagueDetails() {
   const players = team.id === 1 ? mobPlayers : spartansPlayers;
 
   // Filter players based on the league
-  const leaguePlayers = players.filter((player) => player.leagues.includes(league.id));
+  const leaguePlayers = players.filter((player) => player.leagues.includes(league.id)).sort((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="league-details">
