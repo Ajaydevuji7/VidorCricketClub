@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/VidorCricketClub/static/css/main.bd17f9a3.css",
-    "main.js": "/VidorCricketClub/static/js/main.be091798.js",
+    "main.js": "/VidorCricketClub/static/js/main.33b383af.js",
     "static/media/club-photo1.jpg": "/VidorCricketClub/static/media/club-photo1.39ad3e5ef8d06d029d27.jpg",
     "static/media/apcl-photo1.jpg": "/VidorCricketClub/static/media/apcl-photo1.1346402abfd17df2be70.jpg",
     "static/media/club-photo2.jpg": "/VidorCricketClub/static/media/club-photo2.1cca19468c7715ed2133.jpg",
@@ -20,10 +20,10 @@
     "static/media/lpcl-logo.jpg": "/VidorCricketClub/static/media/lpcl-logo.299735ac20acf5b1d8e0.jpg",
     "index.html": "/VidorCricketClub/index.html",
     "main.bd17f9a3.css.map": "/VidorCricketClub/static/css/main.bd17f9a3.css.map",
-    "main.be091798.js.map": "/VidorCricketClub/static/js/main.be091798.js.map"
+    "main.33b383af.js.map": "/VidorCricketClub/static/js/main.33b383af.js.map"
   },
   "entrypoints": [
     "static/css/main.bd17f9a3.css",
-    "static/js/main.be091798.js"
+    "static/js/main.33b383af.js"
   ]
 }
