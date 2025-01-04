@@ -12,9 +12,8 @@
   "homepage": "https://Ajaydevuji7.github.io/VidorCricketClub",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
