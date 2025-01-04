@@ -9,7 +9,6 @@
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1"
   },
-  "homepage": "https://Ajaydevuji7.github.io/VidorCricketClub",
   "scripts": {
     "start": "react-scripts start",
     "clean": "rm -rf build",
