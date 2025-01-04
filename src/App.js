@@ -13,7 +13,7 @@ import Sponsors from './pages/Sponsers';
 
 function App() {
   return (
-    <Router basename='/VidorCricketClub'>
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} /> 
