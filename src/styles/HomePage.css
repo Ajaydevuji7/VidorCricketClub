@@ -6,9 +6,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
-    height: 100vh;
+    min-height: 100vh;
     background-color: black;
-    overflow: hidden;
+    overflow: auto;
+    padding-top: 70px;
 }
 
 /* Intro Section */
@@ -74,6 +75,7 @@
     color: gold;
     padding: 2rem;
     animation: fadeInFromBottom 1s ease-in-out;
+    overflow: auto;
 }
 
 .vcc-leagues-title {
@@ -157,19 +159,24 @@
         padding: 0.6rem 1.5rem;
         font-size: 0.9rem;
     }
+
+    .vcc-leagues-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
     .vcc-intro-section, .vcc-leagues-section {
-        padding: 1rem;
+        padding: 2rem 1rem;
     }
 
     .vcc-title, .vcc-leagues-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .vcc-description, .vcc-leagues-description {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .vcc-action-buttons .vcc-button {
@@ -178,7 +185,12 @@
     }
 
     .vcc-leagues-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .vcc-league-logo {
+        width: 80px;
+        height: 80px;
     }
 }

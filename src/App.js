@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import Teams from './pages/Teams';
@@ -24,7 +24,7 @@ function App() {
         <Route path="/teams/:teamId" element={<TeamDetails />} />
         <Route path="/teams/:teamId/leagues/:leagueId" element={<LeagueDetails />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/sponsers" element={<Sponsors />} />
+        <Route path="/sponsors" element={<Sponsors />} />
       </Routes>
     </Router>
   );

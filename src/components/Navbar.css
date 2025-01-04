@@ -1,3 +1,4 @@
+/* General Navbar Styles (Desktop and Shared Styles) */
 .navbar {
     width: 100%; 
     padding: 1rem 2rem;
@@ -10,6 +11,7 @@
     top: 0;
     z-index: 10;
     box-sizing: border-box;
+    height: 70px;
     animation: slideDown 0.5s ease-in-out;
 }
 
@@ -142,32 +144,104 @@
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         padding: 1rem;
     }
 
+    /* Align logo to the left and keep it compact */
     .navbar-logo {
-        justify-content: center;
-        margin-bottom: 1rem;
+        justify-content: flex-start;
+        width: 100%;
+        padding-left: 1rem;
     }
 
+    /* Hide desktop navbar links by default */
     .navbar-links {
+        display: none;
         flex-direction: column;
-        align-items: center;
         gap: 1rem;
         width: 100%;
+        text-align: left;
+        background-color: black;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Show navbar links when hamburger is clicked */
+    .navbar-links.open {
+        display: flex;
     }
 
     .navbar-links a {
-        text-align: center;
         padding: 0.75rem;
         width: 100%;
         border-radius: 5px;
+        text-align: left;
     }
 
-    .login-button {
+    /* Hamburger Menu */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+        cursor: pointer;
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        z-index: 10;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: gold;
+        border-radius: 2px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Overlay when mobile menu is open */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        text-align: center;
-        padding: 0.75rem;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 8;
+    }
+
+    body.menu-open {
+        overflow: hidden; /* Prevent scrolling when menu is open */
+    }
+}
+
+/* Ensure Desktop Overrides */
+@media (min-width: 769px) {
+    .navbar-links {
+        display: flex !important; 
+    }
+
+    .hamburger {
+        display: none; 
+    }
+
+    .overlay {
+        display: none; 
     }
 }
