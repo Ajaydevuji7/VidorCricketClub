@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.bc988d37.css",
-    "main.js": "/static/js/main.aafb75ba.js",
+    "main.js": "/static/js/main.60cb9714.js",
     "static/media/club-photo1.jpg": "/static/media/club-photo1.39ad3e5ef8d06d029d27.jpg",
     "static/media/apcl-photo1.jpg": "/static/media/apcl-photo1.1346402abfd17df2be70.jpg",
     "static/media/club-photo2.jpg": "/static/media/club-photo2.1cca19468c7715ed2133.jpg",
@@ -20,10 +20,10 @@
     "static/media/lpcl-logo.jpg": "/static/media/lpcl-logo.299735ac20acf5b1d8e0.jpg",
     "index.html": "/index.html",
     "main.bc988d37.css.map": "/static/css/main.bc988d37.css.map",
-    "main.aafb75ba.js.map": "/static/js/main.aafb75ba.js.map"
+    "main.60cb9714.js.map": "/static/js/main.60cb9714.js.map"
   },
   "entrypoints": [
     "static/css/main.bc988d37.css",
-    "static/js/main.aafb75ba.js"
+    "static/js/main.60cb9714.js"
   ]
 }
