@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Teams.css';
 import mobLogo from '../assets/mob-vcc-logo.jpg';
 import spartansLogo from '../assets/spartans-vcc.jpg';
 
 function Teams() {
+useEffect(() => {
+    document.title = "Teams | Vidor Cricket Club";
+  }, []);
+
   const teams = [
     {
       id: 1,
@@ -16,7 +20,7 @@ function Teams() {
       id: 2,
       name: 'Spartans - VCC',
       logo: spartansLogo,
-      description: 'Our second flagship team participating in multiple leagues.',
+      description: 'A valued part of our club, proudly representing us in a premier league.',
     },
   ];
 

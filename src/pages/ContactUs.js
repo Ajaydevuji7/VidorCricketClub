@@ -1,93 +1,179 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/ContactUs.css';
-import contactLogo from '../assets/contact-us.jpg'
+import emailjs from '@emailjs/browser';
 
 function ContactUs() {
-  const [isChatOpen, setChatOpen] = useState(false);
+useEffect(() => {
+    document.title = "Contact US | Vidor Cricket Club";
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
+    inquiryType: '',
   });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const toggleChat = () => setChatOpen(!isChatOpen);
+  const validateField = (name, value) => {
+    switch (name) {
+      case 'name':
+        if (!value.trim()) return 'Name is required.';
+        return '';
+      case 'email':
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!value.trim()) return 'Email is required.';
+        if (!emailRegex.test(value)) return 'Invalid email address.';
+        return '';
+      case 'phone':
+        const phoneRegex = /^\d{10}$/;
+        if (!value.trim()) return 'Phone number is required.';
+        if (!phoneRegex.test(value)) return 'Invalid phone number.';
+        return '';
+      case 'message':
+        if (!value.trim()) return 'Message is required.';
+        return '';
+      case 'inquiryType':
+        if (!value.trim()) return 'Please select an inquiry type.';
+        return '';
+      default:
+        return '';
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      [name]: validateField(name, value),
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('User Details:', formData);
-    alert('Thank you for reaching out! We will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-    setChatOpen(false);
+
+    const validationErrors = {};
+    Object.keys(formData).forEach((key) => {
+      validationErrors[key] = validateField(key, formData[key]);
+    });
+
+    if (Object.values(validationErrors).some((error) => error)) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    emailjs
+      .send(
+        'service_k244tuj',
+        'template_w80dtt4',
+        formData,
+        '3DAgSV3nrVFDZZVq5'
+      )
+      .then(
+        () => {
+          alert('Message sent successfully!');
+          setFormData({ name: '', email: '', phone: '', message: '', inquiryType: '' });
+          setIsSubmitting(false);
+        },
+        (error) => {
+          alert('Failed to send message. Please try again later.');
+          console.error('EmailJS Error:', error);
+          setIsSubmitting(false);
+        }
+      );
   };
 
   return (
     <div className="contact-us">
       <header className="contact-header">
-        <img src={contactLogo} alt="Contact Us" className="contact-image" />
         <h1>Contact Us</h1>
-        <p>Reach out to Vidor Cricket Club for player sign-ups, partnerships, or general inquiries. We're always happy to hear from cricket enthusiasts!</p>
-        <div className="contact">
-          <p>
-            Want to join us? Contact us at{' '}
-            <a href="tel:+16572547365">+1 (657) 254-7365</a> or visit us on{' '}
-            <a
-              href="https://www.instagram.com/vidorcricketclub/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
-                alt="Instagram Logo"
-                className="instagram-logo"
-              />
-            </a>
-          </p>
-        </div>
+        <p>All enquiries welcome. Get in touch with us using the form below.</p>
       </header>
-
-      <div className={`chat-box ${isChatOpen ? 'open' : ''}`} onClick={toggleChat}>
-        <span className="chat-text">Message Us</span>
-      </div>
-
-      {isChatOpen && (
-        <div className="chat-form">
-          <h3>Drop Your Details</h3>
-          <form onSubmit={handleSubmit}>
+      <div className="contact-content">
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <h3>Send a Message</h3>
+          <div className="form-group">
+            <label>
+              Inquiry Type <span className="required">*</span>
+            </label>
+            <select
+              name="inquiryType"
+              value={formData.inquiryType}
+              onChange={handleInputChange}
+              required
+            >
+              <option value="">Select an option</option>
+              <option value="Join Team">Join Team</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Other">Other</option>
+            </select>
+            {errors.inquiryType && <p className="error-text">{errors.inquiryType}</p>}
+          </div>
+          <div className="form-group">
+            <label>
+              Name <span className="required">*</span>
+            </label>
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder="Enter your name"
               value={formData.name}
               onChange={handleInputChange}
               required
             />
+            {errors.name && <p className="error-text">{errors.name}</p>}
+          </div>
+          <div className="form-group">
+            <label>
+              Email <span className="required">*</span>
+            </label>
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder="Enter your email"
               value={formData.email}
               onChange={handleInputChange}
               required
             />
+            {errors.email && <p className="error-text">{errors.email}</p>}
+          </div>
+           <div className="form-group">
+               <label>Phone Number</label>
+               <input
+               type="tel"
+               name="phone"
+               placeholder="Enter your phone number"
+               value={formData.phone}
+               onChange={handleInputChange}
+               />
+                {errors.phone && <p className="error-text">{errors.phone}</p>}
+            </div>
+          <div className="form-group">
+            <label>
+              Message <span className="required">*</span>
+            </label>
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder="Type your message here"
               value={formData.message}
               onChange={handleInputChange}
               required
             ></textarea>
-            <button type="submit">Send</button>
-          </form>
-        </div>
-      )}
+            {errors.message && <p className="error-text">{errors.message}</p>}
+          </div>
+          <button
+            type="submit"
+            className="animate-bounceIn"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Sending...' : 'Submit'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

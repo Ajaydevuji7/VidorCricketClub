@@ -3,6 +3,7 @@
   background: linear-gradient(135deg, black, #202020);
   color: gold;
   text-align: center;
+  animation: fadeInFromTop 1.5s ease-in-out;
 }
 
 .team-logo {
@@ -11,12 +12,14 @@
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid gold;
+  animation: fadeInFromTop 2s ease-in-out;
 }
 .league-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   margin: 2rem 0;
+  animation: fadeInFromBottom 2s ease-in-out;
 }
 
 .league-card {
@@ -26,6 +29,12 @@
   border-radius: 10px;
   border: 2px solid gold;
   box-shadow: 0 4px 15px rgba(255, 223, 0, 0.6);
+  animation: zoomIn 1s ease-in-out;
+}
+
+.league-card:hover, .league-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 223, 0, 0.6);
 }
 
 .league-logo {
@@ -35,12 +44,14 @@
   object-fit: cover;
   border: 5px solid gold;
   margin-bottom: 1rem;
+  animation: pulse 3s ease-in-out;
 }
 
 .player-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
+  animation: fadeInFromBottom 2s ease-in-out;
 }
 
 .player-card {
@@ -49,6 +60,7 @@
   padding: 1rem;
   border-radius: 10px;
   text-align: center;
+  animation: zoomIn 1s ease-in-out;
 }
 
 .team-header {

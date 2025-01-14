@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
 import '../styles/LeagueDetails.css';
 import mobPlayers from '../Utility/mobPlayers.json';
 import spartansPlayers from '../Utility/spartansPlayers.json';
 
 function LeagueDetails() {
+useEffect(() => {
+    document.title = "Players | Vidor Cricket Club";
+  }, []);
+
   const location = useLocation();
   const { league, team } = location.state || {};
 

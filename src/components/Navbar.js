@@ -29,7 +29,7 @@ function Navbar() {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [closeMenu]); // No need for handleResize in the dependency array since it's defined inside useEffect
+    }, [closeMenu]);
 
     return (
         <nav className="navbar">
@@ -67,6 +67,9 @@ function Navbar() {
                 </li>
                 <li>
                     <NavLink to="/sponsors" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>Sponsors</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/donations" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>Donations</NavLink>
                 </li>
                 <li>
                     <NavLink to="/contact" onClick={closeMenu} className={({ isActive }) => isActive ? 'active' : ''}>Contact Us</NavLink>

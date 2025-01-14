@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../styles/Achievements.css';
 import lpclImage from '../assets/lpcl-logo.jpg';
 import apclImage from '../assets/apcl-logo.jpg';
 import ctclImage from '../assets/ctcl-logo.jpg';
 
 function Achievements() {
+useEffect(() => {
+    document.title = "Achievements | Vidor Cricket Club";
+  }, []);
+
   const majorAchievements = [
     {
       name: 'APCL',

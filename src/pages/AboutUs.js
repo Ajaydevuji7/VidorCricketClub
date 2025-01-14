@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import '../styles/AboutUs.css';
 import sriramImage from '../assets/sriram.JPG';
 import maniImage from '../assets/mani.jpg';
 import shivamImage from '../assets/shivam-image.jpg'
 
 function AboutUs() {
+useEffect(() => {
+    document.title = "About US | Vidor Cricket Club";
+  }, []);
+
   const leaders = [
     { name: 'Sriram Devata', role: 'President', image: sriramImage },
     { name: 'Manikanta Chowdary', role: 'Treasurer', image: maniImage }, 

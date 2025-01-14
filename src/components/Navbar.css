@@ -15,6 +15,10 @@
     animation: slideDown 0.5s ease-in-out;
 }
 
+.navbar-spacer {
+  height: var(60px);
+}
+
 @keyframes slideDown {
     from {
         transform: translateY(-100%);

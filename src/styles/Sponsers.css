@@ -3,32 +3,39 @@
   text-align: center;
   background-color: black;
   color: gold;
+  animation: fadeIn 1.5s ease-in-out;
+  padding-top: 70px;
 }
 
 .sponsors-page h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  animation: fadeInFromTop 1s ease-in-out;
 }
 
 .sponsors-page p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  animation: fadeInFromTop 1.2s ease-in-out;
 }
 
 .sponsors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  animation: fadeInFromBottom 1.5s ease-in-out;
 }
 
 .sponsor-card {
   background-color: rgba(32, 32, 32, 0.9);
-  padding: 1.5rem;
-  border-radius: 8px;
+  padding: 5rem;
+  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: zoomIn 1s ease-in-out;
+  animation-delay: calc(var(--order) * 0.2s);
 }
 
 .sponsor-card:hover {
@@ -37,20 +44,116 @@
 }
 
 .sponsor-logo {
-  width: 140px;
-  height: 140px;
-  object-fit: fill;
-  border-radius: 50%;
+  width: 250px;
+  height: 100px;
+  object-fit: contain;
+  border-radius:5%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-  border: 5px solid gold;
+  border: 2px solid gold;
+  display: black;
+  margin: auto;
 }
 
 .sponsor-card h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .sponsor-card p {
   font-size: 1rem;
   margin: 0;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .sponsors-page h1 {
+    font-size: 2rem;
+  }
+
+  .sponsors-page p {
+    font-size: 1rem;
+  }
+
+  .sponsors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller cards */
+  }
+
+  .sponsor-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sponsor-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .sponsor-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .sponsors-page {
+    padding: calc(70px + 100px) 1rem;
+  }
+
+  .sponsors-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .sponsors-page p {
+    font-size: 0.9rem;
+  }
+
+  .sponsors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .sponsor-logo {
+      width: 80px;
+      height: auto;
+      margin: auto;
+    }
+
+  .sponsor-card h3 {
+    font-size: 1rem;
+  }
+
+  .sponsor-card p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra Small Mobile Screens */
+@media (max-width: 480px) {
+  .sponsors-page {
+    padding: 50px 1rem; /* Add spacing for navbar and better fit */
+  }
+
+  .sponsors-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .sponsors-page p {
+    font-size: 0.85rem;
+  }
+
+  .sponsors-grid {
+    grid-template-columns: 1fr; /* Single column for small screens */
+  }
+
+  .sponsor-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .sponsor-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .sponsor-card p {
+    font-size: 0.8rem;
+  }
 }

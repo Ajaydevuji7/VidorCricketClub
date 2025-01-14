@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/TeamDetails.css';
 import leagues from '../Utility/Leagues.json';
@@ -7,6 +7,10 @@ import ctclLogo from '../assets/ctcl-logo.jpg';
 import lpclLogo from '../assets/lpcl-logo.jpg';
 
 function TeamDetails() {
+useEffect(() => {
+    document.title = "Teams | Vidor Cricket Club";
+  }, []);
+
   const location = useLocation();
   const navigate = useNavigate();
   const { team } = location.state || {};

@@ -1,8 +1,11 @@
+@import '../styles/Animations.css';
+
 .league-details {
     padding: 4rem;
     background-color: black;
     color: gold;
     text-align: center;
+    animation: fadeInFromTop 1.5s ease-in-out;
   }
   
   .league-details h2 {

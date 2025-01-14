@@ -1,0 +1,103 @@
+.sponsors-page {
+  padding: 100px 2rem 2rem;
+  text-align: center;
+  background-color: none;
+}
+
+.sponsors-page h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: gold;
+  animation: fadeInFromTop 2s ease-out;
+}
+
+.sponsors-page p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: gold;
+  animation: fadeInFromTop 2s ease-out;
+}
+
+/* Carousel Container */
+.carousel-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 500px;
+  animation: fadeInFromBottom 2s ease-out;
+}
+
+.carousel-item-padding-40-px {
+  padding: 10px;
+}
+
+.sponsor-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 250px;
+}
+
+.sponsor-logo-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.sponsor-logo {
+  max-width: 250px;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .sponsors-page h1 {
+    font-size: 1.8rem;
+  }
+
+  .sponsors-page p {
+    font-size: 0.9rem;
+  }
+
+  .sponsor-logo-container {
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsors-page {
+    padding: 40px 1rem;
+  }
+
+  .sponsors-page h1 {
+    font-size: 1.5rem;
+  }
+
+  .sponsors-page p {
+    font-size: 0.85rem;
+  }
+
+  .sponsor-logo-container {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsors-page h1 {
+    font-size: 1.2rem;
+  }
+
+  .sponsors-page p {
+    font-size: 0.75rem;
+  }
+
+  .sponsor-logo-container {
+    height: 80px;
+  }
+}

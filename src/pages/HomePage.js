@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect }  from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/HomePage.css';
 import apclLogo from '../assets/apcl-logo.jpg';
@@ -6,6 +6,10 @@ import lpclLogo from '../assets/lpcl-logo.jpg';
 import ctclLogo from '../assets/ctcl-logo.jpg';
 
 function HomePage() {
+useEffect(() => {
+    document.title = "Home | Vidor Cricket Club";
+  }, []);
+
     const navigate = useNavigate();
     const leagues = [
         {

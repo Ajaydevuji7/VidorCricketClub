@@ -10,6 +10,7 @@ import LeagueDetails from './pages/LeagueDetails';
 import Gallery from './components/Gallery';
 import AboutUs from './pages/AboutUs';
 import Sponsors from './pages/Sponsers';
+import Donations from './pages/Donations';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/teams/:teamId/leagues/:leagueId" element={<LeagueDetails />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/sponsors" element={<Sponsors />} />
+        <Route path="/donations" element={<Donations />} />
       </Routes>
     </Router>
   );

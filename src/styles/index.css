@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box; /* Include padding/border in element width/height */
   }
+
+  :root {
+    --navbar-height: 60px;
+  }
   
   html, body {
     margin: 0;

@@ -1,72 +1,158 @@
 /* Main Gallery Container */
 .gallery {
-    text-align: center;
-    padding: 5rem 2rem 2rem;
-    background-color: black;
-    color: gold;
+  text-align: center;
+  padding: 5rem 2rem 2rem;
+  background-color: black;
+  color: gold;
+  animation: fadeInFromTop 2s ease-out;
+}
+
+/* Title and Description */
+.gallery h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: gold;
+  animation: fadeInFromTop 2s ease-out;
+}
+
+.gallery p {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: #f1c40f;
+  animation: slideInFromTop 2s ease-out;
+}
+
+/* Gallery Section Title */
+.gallery-section h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1.5rem;
+  color: gold;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Carousel Container */
+.carousel-container {
+  margin: 0 auto;
+  padding: 2rem;
+  animation: fadeInFromBottom 2s ease-out;
+}
+
+/* Photo Container */
+.gallery-photo-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #222;
+  border: 2px solid gold;
+}
+
+/* Photos */
+.gallery-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: zoomIn 1.2s ease-in;
+}
+
+/* Hover Effect for Photos */
+.gallery-photo-container:hover .gallery-photo {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 223, 0, 0.6);
+}
+
+/* Dots Customization */
+.custom-dot-list-style {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.custom-dot-list-style li {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.custom-dot-list-style li button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.custom-dot-list-style li.slick-active button {
+  background-color: gold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 2rem 1rem;
   }
-  
-  /* Title and Description */
+
   .gallery h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .gallery p {
-    margin-bottom: 2rem;
-    font-size: 1.2rem;
-    color: #f1c40f;
-  }
-  
-  /* Gallery Sections */
-  .gallery-section {
-    margin-bottom: 3rem;
-  }
-  
-  .gallery-section h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
   }
-  
-  .league-gallery h3 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+
+  .gallery p {
+    font-size: 1rem;
   }
-  
-  /* Responsive Grid for Photos */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+
+  .gallery-section h2 {
+    font-size: 1.8rem;
   }
-  
-  /* Photo Styling */
-  .gallery-photo {
-    width: 100%;
-    height: auto;
-    border: 2px solid gold;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Custom Animations */
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
   }
-  
-  /* Hover Effect for Photos */
-  .gallery-photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(255, 223, 0, 0.6);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .gallery {
-      padding: 1rem;
-    }
-  
-    .gallery-section h2 {
-      font-size: 1.8rem;
-    }
-  
-    .league-gallery h3 {
-      font-size: 1.2rem;
-    }
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,43 +1,75 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Gallery.css';
-import clubPhoto1 from '../assets/gallery/club/club-photo1.jpg';
-import clubPhoto2 from '../assets/gallery/club/club-photo2.jpg';
-import ctclPhoto1 from '../assets/gallery/ctcl/ctcl-photo1.jpg';
-import apclPhoto1 from '../assets/gallery/apcl/apcl-photo1.jpg';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+// Import images dynamically from respective folders
+const clubPhotos = importAll(require.context('../assets/gallery/club', false, /\.(png|jpe?g|svg)$/));
+const apclPhotos = importAll(require.context('../assets/gallery/apcl', false, /\.(png|jpe?g|svg)$/));
+const ctclPhotos = importAll(require.context('../assets/gallery/ctcl', false, /\.(png|jpe?g|svg)$/));
+const lpclPhotos = importAll(require.context('../assets/gallery/lpcl', false, /\.(png|jpe?g|svg)$/));
+
+// Responsive settings for react-multi-carousel
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
+
+const GallerySection = ({ title, photos }) => (
+  <section className="gallery-section">
+    <h2>{title}</h2>
+    <Carousel
+      swipeable={true}
+      draggable={true}
+      infinite={true}
+      autoPlay={true}
+      autoPlaySpeed={3000}
+      keyBoardControl={true}
+      responsive={responsive}
+      showDots={true}
+      containerClass="carousel-container"
+      dotListClass="custom-dot-list-style"
+    >
+      {photos.map((photo, index) => (
+        <div key={index} className="gallery-photo-container">
+          <img
+            src={photo}
+            alt={`${title} Highlight ${index + 1}`}
+            className="gallery-photo"
+          />
+        </div>
+      ))}
+    </Carousel>
+  </section>
+);
 
 function Gallery() {
+useEffect(() => {
+    document.title = "Gallery | Vidor Cricket Club";
+  }, []);
   return (
     <div className="gallery">
       <h1>Gallery</h1>
       <p>Explore moments from our club and league teams.</p>
 
-      {/* Club Photos Section */}
-      <section className="gallery-section">
-        <h2>Club Highlights</h2>
-        <div className="gallery-grid">
-          <img src={clubPhoto1} alt="Club Highlight 1" className="gallery-photo" />
-          <img src={clubPhoto2} alt="Club Highlight 2" className="gallery-photo" />
-        </div>
-      </section>
-
-      {/* League-Specific Photos Section */}
-      <section className="gallery-section">
-        <h2>League Photos</h2>
-
-        <div className="league-gallery">
-          <h3>CTCL</h3>
-          <div className="gallery-grid">
-            <img src={ctclPhoto1} alt="CTCL Highlight 1" className="gallery-photo" />
-          </div>
-        </div>
-
-        <div className="league-gallery">
-          <h3>APCL</h3>
-          <div className="gallery-grid">
-            <img src={apclPhoto1} alt="APCL Highlight 1" className="gallery-photo" />
-          </div>
-        </div>
-      </section>
+      <GallerySection title="Club Highlights" photos={clubPhotos} />
+      <GallerySection title="CTCL Highlights" photos={ctclPhotos} />
+      <GallerySection title="LPCL Highlights" photos={lpclPhotos} />
+      <GallerySection title="APCL Highlights" photos={apclPhotos} />
     </div>
   );
 }
